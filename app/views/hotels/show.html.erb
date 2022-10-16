@@ -1,0 +1,24 @@
+<h1><%= @hotel.name%></h1>
+<div class="container">
+  <div class="row">
+        <%= image_tag(@hotel.picture_url, width: 100) if @hotel.picture.present? %>
+    <div class="col-6">
+      <p>
+        所在地
+        <%= @hotel.prefecture.name %>
+      </p>
+      <p><%= @hotel.body %></p>
+    </div>
+  </div>
+</div>
+<br>
+<h2>レビュー</h2>
+<% @hotel.reviews.each do |review| %>
+  <div class="card">
+  <p class="card-title text-muted display-5 bg-light">Rating:
+  <%= review.rank %>
+  </p>
+  <p class="card-title">タイトル: <%= review.title %></p>
+  <h5 class="card-body"><%= review.body %></h5>
+  </div>
+<% end %>

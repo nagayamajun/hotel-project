@@ -1,0 +1,22 @@
+<h1>レビュー詳細</h1>
+<div>
+  <p>評価<br>
+  <%= @review.rank%>
+  </p>
+</div>
+
+<div>
+  <p>評価<br>
+  <%= @review.title%>
+  </p>
+</div>
+
+<div>
+  <p>評価<br>
+  <%= @review.body%>
+  </p>
+</div>
+
+<div>
+  <%= link_to 'レビュー一覧',  hotel_reviews_path(@hotel) %>
+</div>

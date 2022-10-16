@@ -1,0 +1,37 @@
+<%= search_form_for @q do |f| %>
+  <div class="pull-right form-inline pr-20">
+    <%= f.search_field :name_cont, placeholder: "ホテル名"%>
+    <%= f.submit%>
+    <% end %>
+    <%= search_form_for @q do |f|%>
+    <%= f.search_field :prefecture_name_cont, placeholder: "都道府県名"%>
+    <%= f.submit%>
+  </div>
+<% end %>
+<br>
+  <div class="container">
+    <div class="row">
+      <% @hotels.each do |hotel| %>
+        <div class="col-md-3">
+          <div class="card h-100">
+            <div class="card-img-top">
+              <%= image_tag(hotel.picture_url, width: '100%') if hotel.picture.present? %>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><%= hotel.name %></h5>
+              <h5 class="card-title"><%= hotel.prefecture.name %></h5>
+              <p class="card-text"><%= hotel.body %></p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">
+              <%= link_to '詳細を見る', hotel_path(hotel) %>
+              <div class="pull-right">
+                <%= link_to 'レビューを見る', hotel_reviews_path(hotel) %>
+              </div>
+              </small>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>

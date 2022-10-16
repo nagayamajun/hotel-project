@@ -1,0 +1,33 @@
+<%= form_with(model: [@hotel, @reservation], local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :checkin %>
+    <%= form.text_field :checkin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :checkout %>
+    <%= form.text_field :checkout %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number %>
+    <%= form.text_field :number %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+<div>
+<%= link_to 'ホテル詳細', hotel_path(@hotel) %>
+</div>

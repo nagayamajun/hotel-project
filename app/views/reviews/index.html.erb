@@ -1,0 +1,11 @@
+<h1><%= @hotel.name %>のreview一覧</h1>
+<% @reviews.each do |review| %>
+  <p>評価: <%= review.rank %></p>
+  <p>タイトル: <%= review.title %></p>
+  <h5><%= review.body %></h5>
+<% end %>
+
+<div>
+<%= link_to 'レビューを投稿する', new_hotel_review_path(@hotel) %>
+<%= link_to 'ホテル詳細', hotel_path(@hotel) %>
+</div>
